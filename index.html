@@ -12,6 +12,17 @@
 
 }</style>
 <script async="" src="./WGU Exams — Interactive Practice Simulations_files/f(1).txt" crossorigin="anonymous" data-checked-head="true"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q98PCV1Q15"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q98PCV1Q15');
+</script>
+
 <style>
   :root{
     --bg:#eef1f4;
@@ -90,11 +101,6 @@
   }
 
   .ad-slot{max-width:728px;margin:2rem auto 0;text-align:center;}
-  footer{text-align:center;padding-top:2.5rem;border-top:1px solid var(--border-soft);}
-  footer .links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
-  footer a{color:var(--text-dim);font-size:12.5px;text-decoration:none;}
-  footer a:hover{color:var(--cyan);text-decoration:underline;}
-  footer .disclaimer{font-size:11px;color:var(--text-faint);max-width:480px;margin:0 auto;line-height:1.6;}
 </style>
 </head>
 <body>
@@ -111,9 +117,9 @@
 
   <div class="catalog">
     <!-- D332 Card (PenTest+) -->
-    <a class="course-card" href="https://wguexams.github.io/D332/">
+    <a class="course-card" href="https://wguexams.github.io/D332/" data-course="D332-PenTest">
       <div class="left">
-        <span class="course-tag">PENTEST+ · PT0-003</span>
+        <span class="course-tag">PENTEST+ · PT0-002</span>
         <div class="title-row">
           <img src="pen-test.png" alt="PenTest+ Logo" class="course-icon">
           <div class="title">D332 — PenTest+ Practice Simulation</div>
@@ -125,7 +131,7 @@
     </a>
 
     <!-- D340 Card (CySA+) -->
-    <a class="course-card" href="https://wguexams.github.io/D340/">
+    <a class="course-card" href="https://wguexams.github.io/D340/" data-course="D340-CySA">
       <div class="left">
         <span class="course-tag">CYSA+ · CS0-003</span>
         <div class="title-row">
@@ -139,7 +145,7 @@
     </a>
 
     <!-- Cloud Security Card -->
-    <a class="course-card" href="https://wguexams.github.io/cloud-security/">
+    <a class="course-card" href="https://wguexams.github.io/cloud-security/" data-course="Cloud-Security">
       <div class="left">
         <span class="course-tag">CLOUD SECURITY D320</span>
         <div class="title-row">
@@ -153,7 +159,7 @@
     </a>
 
     <!-- D281 Card (Linux Essentials) -->
-    <a class="course-card" href="https://wguexams.github.io/D281/">
+    <a class="course-card" href="https://wguexams.github.io/D281/" data-course="D281-Linux">
       <div class="left">
         <span class="course-tag">LPI · LINUX ESSENTIALS D281</span>
         <div class="title-row">
@@ -176,4 +182,18 @@
     </script>
   </div>
 </div>
+
+<script>
+  // Track clicks on each course button
+  document.querySelectorAll('.course-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const courseName = this.getAttribute('data-course');
+      gtag('event', 'click_course_simulation', {
+        'course_id': courseName,
+        'destination_url': this.href
+      });
+    });
+  });
+</script>
+
 </body></html>
