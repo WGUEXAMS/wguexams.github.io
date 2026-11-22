@@ -475,17 +475,9 @@
   }
   @media (max-width:960px){.orb{opacity:.3;}}
 
-  /* ───────── COURSE GRID (2×2) ───────── */
-  .catalog{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
-  .catalog .course-card{flex-direction:column;align-items:stretch;justify-content:space-between;padding:1.35rem 1.35rem 1.25rem;gap:16px;}
-  .catalog .course-card .left{flex-direction:column;gap:12px;}
+  /* ───────── COURSE LIST (stacked rectangles) ───────── */
+  .catalog{display:flex;flex-direction:column;gap:14px;}
   .catalog .course-card .course-icon{width:72px;height:72px;}
-  .catalog .course-card .title{font-size:16.5px;}
-  .catalog .course-card .go{justify-content:center;width:100%;padding:11px 15px;}
-  .catalog .more-note{grid-column:1 / -1;}
-  @media (max-width:640px){
-    .catalog{grid-template-columns:1fr;}
-  }
 
   /* ───────── MATCHING SIDEBAR CARDS ───────── */
   .col-side .contact-card{padding:1.8rem 1.3rem 1.6rem;}
@@ -642,22 +634,6 @@
   </div>
 
   <div class="catalog" id="courses">
-    <!-- SY0-801 Card (Security+) -->
-    <a class="course-card" href="https://wguexams.github.io/Sy0-801/" data-course="SY0-801-SecPlus">
-      <div class="left">
-        <img src="Security.png" alt="Security+ logo" class="course-icon">
-        <div>
-          <div class="tag-row">
-            <span class="course-tag">SECURITY+ · SY0-801</span>
-            <span class="badge-new">NEW</span>
-          </div>
-          <div class="title">Security+ SY0-801 Practice Simulation</div>
-          <p class="desc">Performance-based questions on the newest Security+ objectives: threat intel, access management, and phishing analysis, in Practice and Exam modes.</p>
-        </div>
-      </div>
-      <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
-    </a>
-
     <!-- D340 Card (CySA+) -->
     <a class="course-card" href="https://wguexams.github.io/D340/" data-course="D340-CySA">
       <div class="left">
@@ -708,6 +684,22 @@
           <div class="tag-row"><span class="course-tag">LPI · LINUX ESSENTIALS · D281</span></div>
           <div class="title">D281 — LPI Linux Essentials Practice Exam</div>
           <p class="desc">Commands, file permissions, the filesystem, and the command line, drilled until they're second nature.</p>
+        </div>
+      </div>
+      <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
+    </a>
+
+    <!-- SY0-801 Card (Security+) -->
+    <a class="course-card" href="https://wguexams.github.io/Sy0-801/" data-course="SY0-801-SecPlus">
+      <div class="left">
+        <img src="Security.png" alt="Security+ logo" class="course-icon">
+        <div>
+          <div class="tag-row">
+            <span class="course-tag">SECURITY+ · SY0-801</span>
+            <span class="badge-new">NEW</span>
+          </div>
+          <div class="title">Security+ SY0-801 Practice Simulation</div>
+          <p class="desc">Performance-based questions on the newest Security+ objectives: threat intel, access management, and phishing analysis, in Practice and Exam modes.</p>
         </div>
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
