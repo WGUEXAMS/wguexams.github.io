@@ -32,7 +32,37 @@
   gtag('config', 'G-Q98PCV1Q15');
 </script><style id="dark-reader-style" type="text/css">@media screen {
 
-}</style>
+}
+  /* ===== 3-region homepage layout ===== */
+  .exams-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;margin-bottom:1.6rem;}
+  .exam-col{display:flex;flex-direction:column;min-width:0;}
+  .col-label{font:600 12px 'IBM Plex Mono',monospace;letter-spacing:1.2px;color:#0070F0;text-transform:uppercase;margin:0 0 12px;}
+  .contact-bottom{position:static !important;display:grid !important;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;margin-top:2.8rem;}
+  .contact-bottom .side-head{grid-column:1 / -1;}
+  .contact-bottom .contact-card{height:100%;display:flex;flex-direction:column;}
+  .contact-bottom .wa-qr,.contact-bottom .email-chip{margin-top:auto;min-height:92px;box-sizing:border-box;align-items:center;}
+  .contact-bottom .wa-btn,.contact-bottom .email-btn{margin-top:14px;}
+  @media(max-width:820px){.exams-grid{grid-template-columns:1fr;}.contact-bottom{grid-template-columns:1fr !important;}}
+
+  /* ===== one row, 5 uniform cards ===== */
+  .exams-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:stretch;margin-bottom:1.6rem;}
+  .exams-grid .course-card{flex-direction:column;align-items:stretch;padding:1.25rem 1.15rem;gap:12px;border:1px solid var(--border-soft) !important;--ac:#0070F0 !important;--ac2:#46B1EF !important;--ac-soft:#dcebfd !important;}
+  .exams-grid .course-card::before{content:none !important;}
+  .exams-grid .icon-row{display:inline-flex;align-items:center;gap:10px;}
+  .premium-card .contact-kicker{color:#B8860B !important;}
+  .premium-card h3{color:#B8860B !important;}
+  .premium-card .contact-icon{background:linear-gradient(135deg,#E8C14A 0%,#B8860B 100%) !important;box-shadow:0 10px 28px rgba(184,134,11,.45) !important;}
+  .premium-card .wa-btn{background:linear-gradient(135deg,#C9961A 0%,#9c6f08 100%) !important;box-shadow:0 0 0 1px rgba(255,255,255,.12) inset,0 10px 28px rgba(184,134,11,.4) !important;}
+  .premium-card .wa-btn:hover{background:linear-gradient(135deg,#d8a62a 0%,#b07d0a 100%) !important;box-shadow:0 14px 34px rgba(184,134,11,.5) !important;}
+  .why-item:nth-child(1),.why-item:nth-child(2),.why-item:nth-child(3){--wc:#0070F0 !important;--wbg:#dcebfd !important;}
+  .exams-grid .course-card .left{flex-direction:column;align-items:flex-start;gap:10px;}
+  .exams-grid .course-card .course-icon{width:76px;height:76px;}
+  .exams-grid .course-card .title{font-size:15px;line-height:1.3;}
+  .exams-grid .course-card .desc{font-size:12px;line-height:1.5;}
+  .exams-grid .course-card .go{margin-top:auto;justify-content:center;width:100%;}
+  @media(max-width:900px){.exams-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.exams-grid{grid-template-columns:1fr;}}
+</style>
 
 <style>
   :root{
@@ -437,7 +467,7 @@
   .more-note{border-color:#c4b5fd;color:#7c3aed;background:rgba(237,233,254,.4);}
 
   /* feature boxes */
-  .why-item{border-top:3px solid var(--wc);}
+  .why-item{border-top:1px solid var(--border-soft);}
   .why-item:nth-child(1){--wc:#2563eb;--wbg:#dbeafe;}
   .why-item:nth-child(2){--wc:#db2777;--wbg:#fce7f3;}
   .why-item:nth-child(3){--wc:#059669;--wbg:#d1fae5;}
@@ -477,6 +507,7 @@
 
   /* ───────── COURSE LIST (stacked rectangles) ───────── */
   .catalog{display:flex;flex-direction:column;gap:14px;}
+  .catalog .course-card{min-height:205px;}
   .catalog .course-card .course-icon{width:72px;height:72px;}
 
   /* ───────── MATCHING SIDEBAR CARDS ───────── */
@@ -626,22 +657,19 @@
 </header>
 
 <main class="shell">
-<div class="layout">
 <div class="col-main">
 
   <div class="section-head">
     <h2>Pick your course</h2>
   </div>
 
-  <div class="catalog" id="courses">
-    <!-- D340 Card (CySA+) -->
+  <div class="exams-grid" id="courses">
     <a class="course-card" href="https://wguexams.github.io/D340/" data-course="D340-CySA">
       <div class="left">
-        <img src="cysa.png" alt="CySA+ logo" class="course-icon">
+        <span class="icon-row"><img src="cysa.png" alt="CySA+ logo" class="course-icon"><span class="badge-new">NEW</span></span>
         <div>
           <div class="tag-row">
             <span class="course-tag">CYSA+ · CS0-004</span>
-            <span class="badge-new">NEW</span>
           </div>
           <div class="title">D340 — CySA+ Practice Simulation</div>
           <p class="desc">Timed exam with scenario-based PBQs and a multiple-choice bank: log analysis, vulnerability triage, and incident response.</p>
@@ -649,8 +677,19 @@
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
     </a>
-
-    <!-- D332 Card (PenTest+) -->
+    <a class="course-card" href="https://wguexams.github.io/Sy0-801/" data-course="SY0-801-SecPlus">
+      <div class="left">
+        <span class="icon-row"><img src="Security.png" alt="Security+ logo" class="course-icon"><span class="badge-new">NEW</span></span>
+        <div>
+          <div class="tag-row">
+            <span class="course-tag">SECURITY+ · SY0-801</span>
+          </div>
+          <div class="title">Security+ SY0-801 Practice Simulation</div>
+          <p class="desc">Performance-based questions on the newest Security+ objectives: threat intel, access management, and phishing analysis, in Practice and Exam modes.</p>
+        </div>
+      </div>
+      <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
+    </a>
     <a class="course-card" href="https://wguexams.github.io/D332/" data-course="D332-PenTest">
       <div class="left">
         <img src="pen-test.png" alt="PenTest+ logo" class="course-icon">
@@ -662,8 +701,6 @@
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
     </a>
-
-    <!-- Cloud Security Card -->
     <a class="course-card" href="https://wguexams.github.io/cloud-security/" data-course="Cloud-Security">
       <div class="left">
         <img src="cloud-security.jpg" alt="Cloud Security logo" class="course-icon">
@@ -675,8 +712,6 @@
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
     </a>
-
-    <!-- D281 Card (Linux Essentials) -->
     <a class="course-card" href="https://wguexams.github.io/D281/" data-course="D281-Linux">
       <div class="left">
         <img src="linux.png" alt="Linux logo" class="course-icon">
@@ -688,23 +723,6 @@
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
     </a>
-
-    <!-- SY0-801 Card (Security+) -->
-    <a class="course-card" href="https://wguexams.github.io/Sy0-801/" data-course="SY0-801-SecPlus">
-      <div class="left">
-        <img src="Security.png" alt="Security+ logo" class="course-icon">
-        <div>
-          <div class="tag-row">
-            <span class="course-tag">SECURITY+ · SY0-801</span>
-            <span class="badge-new">NEW</span>
-          </div>
-          <div class="title">Security+ SY0-801 Practice Simulation</div>
-          <p class="desc">Performance-based questions on the newest Security+ objectives: threat intel, access management, and phishing analysis, in Practice and Exam modes.</p>
-        </div>
-      </div>
-      <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
-    </a>
-
   </div>
 
   <!-- WHY -->
@@ -729,7 +747,7 @@
   <div class="more-note">more course simulations in progress</div>
 </div>
 
-<aside class="col-side">
+<aside class="col-side contact-bottom">
   <div class="side-head"><h2>Get in touch</h2></div>
   <!-- PREMIUM SUPPORT -->
   <div class="contact-card premium-card">
@@ -776,9 +794,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
     </a>
   </div>
-
 </aside>
-</div>
 
   <div class="ad-slot">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8607281786536421" data-ad-slot="1613880829" data-ad-format="auto" data-full-width-responsive="true"></ins>
