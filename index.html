@@ -51,7 +51,7 @@
   @media(max-width:820px){.exams-grid{grid-template-columns:1fr;}.contact-bottom{grid-template-columns:1fr !important;}}
 
   /* ===== one row, 5 uniform cards ===== */
-  .exams-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:11px;align-items:stretch;margin-bottom:1.6rem;}
+  .exams-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;align-items:stretch;margin-bottom:1.6rem;}
   .exams-grid .course-card{flex-direction:column;align-items:stretch;padding:1.25rem 1.15rem;gap:12px;border:1px solid var(--border-soft) !important;--ac:#0070F0 !important;--ac2:#46B1EF !important;--ac-soft:#dcebfd !important;}
   .exams-grid .course-card::before{content:none !important;}
   .exams-grid .icon-row{display:inline-flex;align-items:center;gap:10px;}
@@ -212,6 +212,7 @@
   .course-card:nth-child(5){animation-delay:.33s;}
   .course-card:nth-child(6){animation-delay:.40s;}
   .course-card:nth-child(7){animation-delay:.47s;}
+  .course-card:nth-child(8){animation-delay:.54s;}
   @keyframes rise{to{opacity:1;transform:translateY(0);}}
   .course-card::before{ /* accent bar */
     content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:0 3px 3px 0;
@@ -577,6 +578,7 @@
   .course-card[data-course="SY0-801-SecPlus"]{--ac:#0070F0;--ac-soft:#dcebfd;--ac2:#97E152;}
   .course-card[data-course="ITIL4-Foundation"]{--ac:#8b5cf6;--ac-soft:#ede9fe;--ac2:#a855f7;}
   .course-card[data-course="A-Core1"]{--ac:#C8202F;--ac-soft:#fde3e5;--ac2:#f0485a;}
+  .course-card[data-course="A-Core2"]{--ac:#C8202F;--ac-soft:#fde3e5;--ac2:#f0485a;}
   .badge-new{background:var(--wgu-lime);color:var(--wgu-midnight);box-shadow:0 2px 8px rgba(151,225,82,.45);}
   .more-note{border-color:#9fcdf2;color:var(--wgu-med);background:rgba(238,246,249,.7);}
 
@@ -642,7 +644,7 @@
       WGU Exams
     </div>
 
-    <div><span class="live-pill"><span class="live-dot"></span>7 SIMULATIONS LIVE · MORE COMING</span></div>
+    <div><span class="live-pill"><span class="live-dot"></span>8 SIMULATIONS LIVE · MORE COMING</span></div>
 
     <h1>Don't let the PBQs<br><span class="hl">be your first look.</span></h1>
     <p class="sub">Free, hands-on simulations built to mirror the <strong>performance-based questions</strong> in WGU IT courses. Practice the hard part before it counts.</p>
@@ -675,15 +677,24 @@
   </div>
 
   <div class="exams-grid" id="courses">
-    <a class="course-card" href="https://wguexams.github.io/D340/" data-course="D340-CySA">
+    <a class="course-card" href="https://wguexams.github.io/Core1/" data-course="A-Core1">
       <div class="left">
-        <span class="icon-row"><img src="cysa.png" alt="CySA+ logo" class="course-icon"><span class="badge-new">NEW</span></span>
+        <span class="icon-row"><img src="Core1.png" alt="A+ Core 1 logo" class="course-icon"><span class="badge-new">NEW</span></span>
         <div>
-          <div class="tag-row">
-            <span class="course-tag">CYSA+ · CS0-004</span>
-          </div>
-          <div class="title">D340 — CySA+ Practice Simulation</div>
-          <p class="desc">Timed exam with scenario-based PBQs and a multiple-choice bank: log analysis, vulnerability triage, and incident response.</p>
+          <div class="tag-row"><span class="course-tag">A+ CORE 1 · 220-1101</span></div>
+          <div class="title">A+ Core 1 Practice Exam</div>
+          <p class="desc">Five hands-on performance-based questions: VoIP troubleshooting, SOHO cabling, power protection, device issues, and wireless AP setup.</p>
+        </div>
+      </div>
+      <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
+    </a>
+    <a class="course-card" href="https://wguexams.github.io/Core2/" data-course="A-Core2">
+      <div class="left">
+        <span class="icon-row"><img src="Core2.png" alt="A+ Core 2 logo" class="course-icon"><span class="badge-new">NEW</span></span>
+        <div>
+          <div class="tag-row"><span class="course-tag">A+ CORE 2 · 220-1102</span></div>
+          <div class="title">A+ Core 2 Practice Exam</div>
+          <p class="desc">Six hands-on performance-based questions: tablet Wi-Fi, a missing DLL, home networking, help desk tickets, rogue services, and a support chat.</p>
         </div>
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
@@ -697,6 +708,19 @@
           </div>
           <div class="title">Security+ SY0-801 Practice Simulation</div>
           <p class="desc">Performance-based questions on the newest Security+ objectives: threat intel, access management, and phishing analysis, in Practice and Exam modes.</p>
+        </div>
+      </div>
+      <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
+    </a>
+    <a class="course-card" href="https://wguexams.github.io/D340/" data-course="D340-CySA">
+      <div class="left">
+        <span class="icon-row"><img src="cysa.png" alt="CySA+ logo" class="course-icon"><span class="badge-new">NEW</span></span>
+        <div>
+          <div class="tag-row">
+            <span class="course-tag">CYSA+ · CS0-004</span>
+          </div>
+          <div class="title">D340 — CySA+ Practice Simulation</div>
+          <p class="desc">Timed exam with scenario-based PBQs and a multiple-choice bank: log analysis, vulnerability triage, and incident response.</p>
         </div>
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
@@ -741,17 +765,6 @@
           <div class="tag-row"><span class="course-tag">ITIL 4 · FOUNDATION</span></div>
           <div class="title">ITIL 4 Foundation Practice Exam</div>
           <p class="desc">Service management essentials: the four dimensions, guiding principles, the service value chain, and key practices, in Practice and Exam modes.</p>
-        </div>
-      </div>
-      <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
-    </a>
-    <a class="course-card" href="https://wguexams.github.io/Core1/" data-course="A-Core1">
-      <div class="left">
-        <span class="icon-row"><img src="Core1.png" alt="A+ Core 1 logo" class="course-icon"><span class="badge-new">NEW</span></span>
-        <div>
-          <div class="tag-row"><span class="course-tag">A+ CORE 1 · 220-1101</span></div>
-          <div class="title">A+ Core 1 Practice Exam</div>
-          <p class="desc">Five hands-on performance-based questions: VoIP troubleshooting, SOHO cabling, power protection, device issues, and wireless AP setup.</p>
         </div>
       </div>
       <span class="go">Start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"></path></svg></span>
